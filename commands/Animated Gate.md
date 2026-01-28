@@ -39,3 +39,14 @@ You can obviously change the coordinates in those commands if you want to change
 ```
 /execute as @e[tag=big_gate] run data modify entity @s teleport_duration set value 30
 ```
+
+### Step 5
+Finally, you can add command blocks that add/remove barriers by simply using the `fill` command with coordinates at the corners of your gate. For example, the command below will replace all air blocks with barriers between (10,60,20) and (15,62,20) to make the gate solid when it's closed.
+```
+fill 10 60 20 15 62 20 barrier replace air
+```
+Then with a similar command, you can also set the barriers back to air for when the gate is open.
+```
+fill 10 60 20 15 62 20 air replace barrier
+```
+NOTE: These coordinates are just an example, and you will have to set the coordinates differently depending on where your gate is. Pick one bottom corner, and then the top corner on the opposite side of the gate.
